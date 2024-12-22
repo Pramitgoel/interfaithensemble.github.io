@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay Competition - Interfaith Ensemble</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #4299e1;
+            --accent: #ed8936;
+            --light: #f7fafc;
+            --text: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--secondary);
+        }
+
+        .competition-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .competition-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .competition-content h1 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .competition-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .questions, .guidelines {
+            margin-top: 2rem;
+        }
+
+        .questions h2, .guidelines h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .questions ol {
+            list-style-type: decimal;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .questions li {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            padding-left: 0.5rem;
+        }
+
+        .guidelines ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .guidelines li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .competition-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="ck.png" alt="CK Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+                Interfaith Ensemble
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="essay-competition.html">Essay Competition</a>
+                <a href="submit.html">Submit Essay</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+   <section class="competition-section">
+    <div class="competition-content">
+        <h1>Cultural Heritage Essay Competition 2024</h1>
+        <p>Share your insights and experiences about the rich cultural heritage of your state through one of our themed questions.</p>
+        
+        <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background-color: var(--light); border-radius: 8px; border: 2px solid var(--primary);">
+            <p style="font-weight: bold; font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem;">
+                Distinguished Evaluation Panel
+            </p>
+            <p style="font-style: italic; color: var(--text);">
+                All essays are evaluated by our esteemed panel of graduates from:
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; flex-wrap: wrap;">
+                <span style="font-weight: bold; color: var(--primary);">Stanford University</span>
+                <span style="font-weight: bold; color: var(--primary);">Harvard University</span>
+                <span style="font-weight: bold; color: var(--primary);">Indian Institutes of Management (IIM)</span>
+            </div>
+        </div>
+
+        <div class="questions">
+            <h2>Essay Questions</h2>
+            <ol>
+                <li>"Describe a unique cultural tradition or practice from your state. How has it evolved over time?" What is its significance to you personally as well as to your culture and state?</li>
+                <li>"Describe the unique cuisine from your state. How has it evolved over time?" What is its significance to you personally as well as to your culture and state?</li>
+                <li>"Describe the unique style of music from your state. How has it evolved over time?" What is its significance to you personally as well as to your culture and state?</li>
+                <li>"Describe the unique style of art from your state. How has it evolved over time?" What is its significance to you personally as well as to your culture and state?</li>
+            </ol>
+        </div>
+
+        <div class="guidelines">
+            <h2>Guidelines</h2>
+            <ul>
+                <li>Word limit: 800 words per essay</li>
+                <li>Choose ONE question from the four options above</li>
+                <li>Each question category will have separate awards</li>
+                <li>Essays must be original and previously unpublished</li>
+                <li>Include specific examples and personal experiences in your essay</li>
+                <li>Proper citations required for any referenced sources</li>
+                <li>Essays should be written in English</li>
+                <li>All winning essays will be published on our website</li>
+                <li>Deadline for submission: February 15, 2024</li>
+                <li>Essays will be graded on a rolling bases as they are submitted</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <footer>
+        <p>&copy; 2024 Interfaith Ensemble. All rights reserved.</p>
+    </footer>
+</body>
+</html>

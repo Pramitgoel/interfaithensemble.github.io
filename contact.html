@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Interfaith Ensemble</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #4299e1;
+            --accent: #ed8936;
+            --light: #f7fafc;
+            --text: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--primary);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--secondary);
+        }
+
+        .contact-section {
+            flex: 1;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #dd6b20;
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .contact-section {
+                margin: 1rem auto;
+            }
+
+            .contact-form {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="ck.png" alt="CK Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+                Interfaith Ensemble
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="essay-competition.html">Essay Competition</a>
+                <a href="submit.html">Submit Essay</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-section">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Interfaith Ensemble. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            fetch('/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/thankyou.html';
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to send message. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
